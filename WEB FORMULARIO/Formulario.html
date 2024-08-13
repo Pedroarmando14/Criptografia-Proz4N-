@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Contato</title>
+    <link rel="stylesheet" href="Styles.css">
+    <!-- Adicionando CryptoJS via CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Formulário de Contato</h1>
+        <form id="contact-form">
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" name="mensagem" required></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit">Enviar</button>
+            </div>
+        </form>
+        <div id="confirmation-message" class="hidden">Obrigado pelo seu contato! Sua mensagem foi enviada com sucesso.</div>
+        <button id="show-encrypted-messages">Mostrar Mensagens Criptografadas</button>
+        <div id="password-container" class="hidden">
+            <label for="password">Digite a senha para descriptografar:</label>
+            <input type="password" id="password" required>
+            <button id="decrypt-messages">Descriptografar Mensagens</button>
+        </div>
+        <div id="messages-list" class="hidden">
+            <ul id="messages"></ul>
+        </div>
+    </div>
+    <script src="Script.js"></script>
+</body>
+</html>
